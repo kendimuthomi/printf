@@ -37,11 +37,11 @@ int print_hex_big(va_list args, flags_t *f);
 int print_binary(va_list args, flags_t *f);
 int print_octal(va_list args, flags_t *f);
 /* converter */
-char *convert(unsigned long int num, int base, int lowercase);
+char *converter(unsigned long int num, int base, int lowercase);
 /* _printf */
 int _printf(const char *format, ...);
 /* get_format_specifier */
-int (*get_print(char s))(va_list, flags_t *);
+int (*get_format_specifier(char s))(va_list, flags_t *);
 /* get_flag */
 int get_flag(char s, flags_t *f);
 /* print_alpha */
@@ -52,7 +52,7 @@ int _putchar(char c);
 int _puts(char *s);
 /* print_custom */
 int print_rot13(va_list args, flags_t *f);
-int print_str_rev(va_list args, flags_t *f);
+int print_strrev(va_list args, flags_t *f);
 int print_S(va_list args, flags_t *f);
 /* print_pointer */
 int print_pointer(va_list args, flags_t *f);
