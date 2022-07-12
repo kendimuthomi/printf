@@ -1,0 +1,5 @@
+.TH _printf 1 "July 12, 2022" "version 1.0" "_printf man page"
+.SH NAME
+_printf - format the data and prints it
+.SH SYNOPSIS
+#include <unistd.h> <stdarg.h> <stdlib.h> "main.h"
