@@ -16,7 +16,7 @@ int print_pointer(va_list args, flags_t *f)
 
 	if (!p)
 		return (_puts("(nil)"));
-	str = converter(p, 16, 1);
+	s = converter(p, 16, 1);
 	count += _puts("0x");
 	count += _puts(s);
 	return (count);
