@@ -3,3 +3,29 @@
 _printf - format the data and prints it
 .SH SYNOPSIS
 #include <unistd.h> <stdarg.h> <stdlib.h> "main.h"
+
+int printf(const char *format, ...);
+
+.SH DESCRIPTION
+function that produces output according to a format.
+
+.I
+.SS CONVERSION SPECIFIERS:
+.RS
+
+A character specifying the type of conversion to be applied
+
+.IP c
+character. The int argument is changed to an unsigned charand the output character is written.
+
+.IP s
+The const char * parameter is a pointer to an array of character type. characters from array are written until there is a terminating null byte ('\0').
+
+.IP o, u, x, X
+the unsigned int parameter is converted to unsigned octal (o), unsigned decimal (u), and unsigned hexadecimal notation (x and X). 
+
+.IP p
+the void * pointer argument is written in hexadecimal (%#x and %#lx).
+
+.I
+.SS 
