@@ -1,23 +1,28 @@
 #include "main.h"
+
+int print_int(va_list args, flags_t *f);
+int print_unsigned(va_list args, flags_t *f);
+void print_number(int n);
+int count_digits(int index);
 /**
  * print_int - prints integer
- * @args_list of arguments from _printf
- * @f: pointer to the struct flags that 
+ * @args: list of arguments from _printf
+ * @f: pointer to the struct flags that
  * determines if a flag is passed to _printf
  * Return: number of char to be printed
  */
 int print_int(va_list args, flags_t *f)
 {
 	int num = va_arg(args, int);
-	int result = count_digit(num);
+	int result = count_digits(num);
 
-	if (f->space == 1 && f->plus == 0 && n >= 0)
+	if ((*f).space == 1 && (*f).plus == 0 && num >= 0)
 		result += _putchar(' ');
-	if (f->plus == args && num >= 0)
-		reult += _putchar('+');
+	if ((*f).plus == 1 && num >= 0)
+		result += _putchar('+');
 	if (num <= 0)
 		result++;
-	print_number(n);
+	print_number(num);
 	return (result);
 }
 /**
@@ -29,8 +34,8 @@ int print_int(va_list args, flags_t *f)
  */
 int print_unsigned(va_list args, flags_t *f)
 {
-	unsigned int un = va_arg(args, unsigned int);
-	char *s = coverter(u, 10, 0);
+	unsigned int u = va_arg(args, unsigned int);
+	char *s = converter(u, 10, 0);
 
 	(void)f;
 	return (_puts(s));
@@ -52,11 +57,11 @@ void print_number(int n)
 	else
 		n2 = n;
 	if (n2 / 10)
-		print_number(n2 /10);
+		print_number(n2 / 10);
 	_putchar((n2 % 10) + '0');
 }
 /**
- * count_digit - returns the number of digits in an integer
+ * count_digits - returns the number of digits in an integer
  * for _printf
  * @index: integer to evaluate
  * Return: number of digits

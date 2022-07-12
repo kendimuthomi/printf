@@ -41,7 +41,7 @@ char *converter(unsigned long int num, int base, int lowercase);
 /* _printf */
 int _printf(const char *format, ...);
 /* get_format_specifier */
-int (*get_format_specifier(char s))(va_list, flags_t *);
+int (*get_format_specifiers(char s))(va_list, flags_t *);
 /* get_flag */
 int get_flag(char s, flags_t *f);
 /* print_alpha */
