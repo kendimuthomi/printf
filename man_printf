@@ -22,7 +22,7 @@ character. The int argument is changed to an unsigned charand the output charact
 The const char * parameter is a pointer to an array of character type. characters from array are written until there is a terminating null byte ('\0').
 
 .IP o, u, x, X
-the unsigned int parameter is converted to unsigned octal (o), unsigned decimal (u), and unsigned hexadecimal notation (x and X). 
+The unsigned int parameter is converted to unsigned octal (o), unsigned decimal (u), and unsigned hexadecimal notation (x and X).
 
 .IP p
 the void * pointer argument is written in hexadecimal (%#x and %#lx).
