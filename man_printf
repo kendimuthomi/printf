@@ -28,4 +28,50 @@ the unsigned int parameter is converted to unsigned octal (o), unsigned decimal 
 the void * pointer argument is written in hexadecimal (%#x and %#lx).
 
 .I
-.SS 
+.SS CUSTOM CONVERSION SPECIFIERS
+.RS
+
+IP b
+Decimal signed integer. The int parameters are converted into binary
+
+.IP r
+The const char * argument is supposed to be a pointer to an array of charcater type (pointer to string).
+
+.SH RETURN VALUE
+.RS
+After succesful return, the functions return the number of characters printed and this is in exclusion of the nul byte used to end output into strings.
+
+Incase of an output error, a negative value (-1) is returned
+
+.SH EXAMPLES
+.RS
+.SS --------------
+.I
+.SS Character[%c]:
+.RS
+.SS --------------
+.SS Input         _printf("This is a char: [%c]", 'C');
+.SS Output	   This is a char: [C]
+.SS --------------
+.I
+.SS Literal String:
+.RS
+.SS --------------
+.SS Input	 _printf("Coding is not optional when using printf");
+.SS Output	  Coding is not optional when using printf
+.SS --------------
+.I
+.SS Integers[%i]:
+.RS
+.SS --------------
+.SS Input	 _printf("I love printing numbers: [%i]", 20);
+.SS Output	  I love printing numbers: [20]
+.SS --------------
+.RE
+
+.SH SEE ALSO
+.I printf(3)
+.SH BUGS
+Report _printf Kendi Muthomi (kendimuthomi@gmail.com), Gyvira Odima (godima20@gmail.com)
+.SH AUTHORS
+Kendi Muthomi and Gyvira Odima, ALX cohort 7.
