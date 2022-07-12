@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 			}
 			while (get_flag(*p, &flags))
 				p++;
-			pfunc = get_format_specifier(*p);
+			pfunc = get_format_specifiers(*p);
 			count += (pfunc)
 				? pfunc(args, &flags)
 				: _printf("%%%c", *p);
