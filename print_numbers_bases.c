@@ -26,7 +26,7 @@ int print_hex(va_list args, flags_t *f)
  * @args: va_list arguments from _printf
  * @f: pointer to the struct that determines if a flag
  * is passed to _printf
- * Description: the function calls converter() that 
+ * Description: the function calls converter() that
  * converts the input number into the correct base
  * and returns it to string
  * Return: the number of char to be printed

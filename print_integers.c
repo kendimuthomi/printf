@@ -6,8 +6,8 @@ void print_number(int n);
 int count_digits(int index);
 /**
  * print_int - prints integer
- * @args_list of arguments from _printf
- * @f: pointer to the struct flags that 
+ * @args: list of arguments from _printf
+ * @f: pointer to the struct flags that
  * determines if a flag is passed to _printf
  * Return: number of char to be printed
  */
@@ -57,11 +57,11 @@ void print_number(int n)
 	else
 		n2 = n;
 	if (n2 / 10)
-		print_number(n2 /10);
+		print_number(n2 / 10);
 	_putchar((n2 % 10) + '0');
 }
 /**
- * count_digit - returns the number of digits in an integer
+ * count_digits - returns the number of digits in an integer
  * for _printf
  * @index: integer to evaluate
  * Return: number of digits
