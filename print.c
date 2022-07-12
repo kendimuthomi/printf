@@ -7,7 +7,7 @@
  */
 int print_pointer(va_list args, flags_t *f)
 {
-	char *str;
+	char *s;
 	unsigned long int p = va_arg(args, unsigned long int);
 
 	register int count = 0;
@@ -18,7 +18,7 @@ int print_pointer(va_list args, flags_t *f)
 		return (_puts("(nil)"));
 	str = converter(p, 16, 1);
 	count += _puts("0x");
-	count += _puts(str);
+	count += _puts(s);
 	return (count);
 }
 /**
@@ -29,12 +29,12 @@ int print_pointer(va_list args, flags_t *f)
  */
 int print_string(va_list args, flags_t *f)
 {
-	char *str = va_arg(args, char *);
+	char *s = va_arg(args, char *);
 	(void)f;
 
-	if (!str)
-		str = "(null)";
-	return (_puts(str));
+	if (!s)
+		s = "(null)";
+	return (_puts(s));
 }
 /**
  * print_char - prints a character to stdout

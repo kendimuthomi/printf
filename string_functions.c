@@ -10,7 +10,7 @@
  */
 int print_S(va_list args, flags_t *f)
 {
-	int i, count = 0;
+	int index, count = 0;
 	char *result;
 	char *str = va_arg(args, char *);
 
@@ -18,19 +18,19 @@ int print_S(va_list args, flags_t *f)
 
 	if (!str)
 		return (_puts("(null)"));
-	for (i = 0; str[i]; i++)
+	for (index = 0; str[index]; index++)
 	{
-		if (str[i] > 0 && (str[i] < 32 || str[i] >= 127))
+		if (str[index] > 0 && (str[index] < 32 || str[index] >= 127))
 		{
 			_puts("\\x");
 			count += 2;
-			result = converter(str[i], 16, 0);
+			result = converter(str[index], 16, 0);
 			if (!result[1])
 				count += _putchar('0');
 			count += _puts(result);
 		}
 		else
-			count += _putchar(str[i]);
+			count += _putchar(str[index]);
 	}
 	return (count);
 }
@@ -42,19 +42,19 @@ int print_S(va_list args, flags_t *f)
  */
 int print_strrev(va_list args, flags_t *f)
 {
-	int i = 0, j;
-	char *str = va_arg(args, char *);
+	int index = 0, j;
+	char *s = va_arg(args, char *);
 
 	(void)f;
-	if (!str)
-		str = "(null)";
-	while (str[i])
-		i++;
-	for (j = i - 1; j >= 0; j--)
+	if (!s)
+		s = "(null)";
+	while (s[index])
+		index++;
+	for (j = index - 1; j >= 0; j--)
 	{
-		_putchar(str[j]);
+		_putchar(s[j]);
 	}
-	return (i);
+	return (index);
 }
 /**
  * print_rot13 - prints a rot13 encrypted string
@@ -64,26 +64,26 @@ int print_strrev(va_list args, flags_t *f)
  */
 int print_rot13(va_list args, flags_t *f)
 {
-	int i, j;
+	int index, j;
 	char rot13[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char ROT13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 	char *s = va_arg(args, char *);
 
 	(void)f;
-	for (i = 0; s[i]; i++)
+	for (index = 0; s[index]; index++)
 	{
-		if (s[i] < 'A' || (s[i] > 'Z' && s[i] < 'a') || s[i] > 'z')
-			_putchar(s[i]);
+		if (s[index] < 'A' || (s[index] > 'Z' && s[index] < 'a') || s[index] > 'z')
+			_putchar(s[index]);
 		else
 		{
 			for (j = 0; j <= 52; j++)
 			{
-				if (s[i] == rot13[j])
+				if (s[index] == rot13[j])
 					_putchar(ROT13[j]);
 			}
 		}
 	}
-	return (i);
+	return (index);
 }
 /**
  * print_percent - prints the percentage sign

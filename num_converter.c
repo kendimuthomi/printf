@@ -15,7 +15,7 @@ char *converter(unsigned long int num, int base, int lowercase)
 	rep = (lowercase)
 		? "0123456789abcdef"
 		: "0123456789ABCDEF";
-	ptr = &buffer[49];
+	ptr = &buff[49];
 	*ptr = '\0';
 	do {
 		*--ptr = rep[num % base];
