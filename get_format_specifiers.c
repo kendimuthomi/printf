@@ -9,7 +9,7 @@
 int (*get_format_specifiers(char s)) (va_list args, flags_t *f)
 {
 	hp function_arr[] = {
-		{'i', peint_int},
+		{'i', print_int},
 		{'s', print_string},
 		{'c', print_char},
 		{'d', print_int},
@@ -22,10 +22,9 @@ int (*get_format_specifiers(char s)) (va_list args, flags_t *f)
 		{'r', print_strrev},
 		{'S', print_S},
 		{'p', print_pointer},
-		{'%', pint_percent},
-		{NULL, NULL}
+		{'%', print_percent}
 	};
-	int flags = 15;
+	int flags = 14;
 
 	register int i;
 

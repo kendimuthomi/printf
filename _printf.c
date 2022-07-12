@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	flags_t flags = {0, 0, 0};
 
-	reg int count = 0;
+	register int count = 0;
 	va_start(args, format);
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
@@ -44,3 +44,4 @@ int _printf(const char *format, ...)
 	_putchar (-1);
 	va_end(args);
 	return (count);
+}
