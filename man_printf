@@ -72,6 +72,6 @@ Incase of an output error, a negative value (-1) is returned
 .SH SEE ALSO
 .I printf(3)
 .SH BUGS
-Report _printf Kendi Muthomi (kendimuthomi@gmail.com), Gyvira Odima (godima20@gmail.com)
+Report _printf Kendi Muthomi (kendijackline42@gmail.com), Gyvira Odima (godima20@gmail.com)
 .SH AUTHORS
 Kendi Muthomi and Gyvira Odima, ALX cohort 7.
