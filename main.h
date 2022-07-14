@@ -8,12 +8,24 @@
  * @plus: flag for the '+' character
  * @space: flag for the ' ' character
  * @hash: flag for the '#' character
+ * @zero: flag for the '0' character
+ * @minus: flag for the '-' character
+ * @width: width handler
+ * @precision: precision handler
+ * @h_mode: short length handler
+ * @l_mode: long length handler
  */
 typedef struct flags
 {
-	int plus;
-	int space;
-	int hash;
+	unsigned int plus;
+	unsigned int space;
+	unsigned int hash;
+	unsigned int zero;
+	unsigned int minus;
+	unsigned int width;
+	unsigned int precision;
+	unsigned int h_mode;
+	unsigned int l_mode;
 } flags_t;
 /**
  * struct handlePrint - struct to choose the right function
