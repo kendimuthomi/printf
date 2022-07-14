@@ -18,8 +18,12 @@ int print_int(va_list args, flags_t *f)
 
 	if ((*f).space == 1 && (*f).plus == 0 && num >= 0)
 		result += _putchar(' ');
-	if ((*f).plus == 1 && num >= 0)
+	if ((*f).plus == 1 && num > 0)
 		result += _putchar('+');
+	if ((*f).minus == 1 && num < 0)
+		result += _putchar('-');
+	if ((*f).zero == 1 && num == 0)
+		result += _putchar('0');
 	if (num <= 0)
 		result++;
 	print_number(num);
