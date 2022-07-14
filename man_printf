@@ -1,0 +1,77 @@
+.TH _printf 1 "July 12, 2022" "version 1.0" "_printf man page"
+.SH NAME
+_printf - format the data and prints it
+.SH SYNOPSIS
+#include <unistd.h> <stdarg.h> <stdlib.h> "main.h"
+
+int printf(const char *format, ...);
+
+.SH DESCRIPTION
+function that produces output according to a format.
+
+.I
+.SS CONVERSION SPECIFIERS:
+.RS
+
+A character specifying the type of conversion to be applied
+
+.IP c
+character. The int argument is changed to an unsigned charand the output character is written.
+
+.IP s
+The const char * parameter is a pointer to an array of character type. characters from array are written until there is a terminating null byte ('\0').
+
+.IP o, u, x, X
+The unsigned int parameter is converted to unsigned octal (o), unsigned decimal (u), and unsigned hexadecimal notation (x and X).
+
+.IP p
+the void * pointer argument is written in hexadecimal (%#x and %#lx).
+
+.I
+.SS CUSTOM CONVERSION SPECIFIERS
+.RS
+
+IP b
+Decimal signed integer. The int parameters are converted into binary
+
+.IP r
+The const char * argument is supposed to be a pointer to an array of charcater type (pointer to string).
+
+.SH RETURN VALUE
+.RS
+After succesful return, the functions return the number of characters printed and this is in exclusion of the nul byte used to end output into strings.
+
+Incase of an output error, a negative value (-1) is returned
+
+.SH EXAMPLES
+.RS
+.SS --------------
+.I
+.SS Character[%c]:
+.RS
+.SS --------------
+.SS Input         _printf("This is a char: [%c]", 'C');
+.SS Output	   This is a char: [C]
+.SS --------------
+.I
+.SS Literal String:
+.RS
+.SS --------------
+.SS Input	 _printf("Coding is not optional when using printf");
+.SS Output	  Coding is not optional when using printf
+.SS --------------
+.I
+.SS Integers[%i]:
+.RS
+.SS --------------
+.SS Input	 _printf("I love printing numbers: [%i]", 20);
+.SS Output	  I love printing numbers: [20]
+.SS --------------
+.RE
+
+.SH SEE ALSO
+.I printf(3)
+.SH BUGS
+Report _printf Kendi Muthomi (kendijackline42@gmail.com), Gyvira Odima (godima20@gmail.com)
+.SH AUTHORS
+Kendi Muthomi and Gyvira Odima, ALX cohort 7.
